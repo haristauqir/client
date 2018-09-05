@@ -2528,3 +2528,17 @@ func NewTeamFTLOutdatedError(s string) error {
 func (t TeamFTLOutdatedError) Error() string {
 	return fmt.Sprintf("FTL outdated: %s", t.msg)
 }
+
+//=============================================================================
+
+type UserReverifyNeededError struct {
+	msg string
+}
+
+func NewUserReverifyNeededError(s string) error {
+	return UserReverifyNeededError{s}
+}
+
+func (e UserReverifyNeededError) Error() string {
+	return fmt.Sprintf("User green link error: %s", e.msg)
+}
