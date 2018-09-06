@@ -19,6 +19,10 @@ func (e externalServicesCollection) Register(st libkb.ServiceType) {
 	}
 }
 
+func (e externalServicesCollection) ManuallyRegister(key string, st libkb.ServiceType) {
+	e[key] = st
+}
+
 func (e externalServicesCollection) GetServiceType(s string) libkb.ServiceType {
 	return e[strings.ToLower(s)]
 }
